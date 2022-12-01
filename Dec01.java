@@ -6,7 +6,23 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Dec01 {
-    public Integer readFile() {
+    public Integer getMax() {
+        // get max
+        List<Integer> calories = createReducedList();
+        return Collections.max(calories);
+    }
+
+    public Integer getTopThreeTotal() {
+        List<Integer> calories = createReducedList();
+        List<Integer> sortedCalories = calories.stream().sorted(Comparator.reverseOrder()).toList();
+        List<Integer> topThree = new ArrayList<>();
+        topThree.add(sortedCalories.get(0));
+        topThree.add(sortedCalories.get(1));
+        topThree.add(sortedCalories.get(2));
+        return topThree.stream().reduce(0, Integer::sum);
+    }
+
+    private List<Integer> readFile() {
         try {
             // read from file
             List<String> allLines = Files.readAllLines(Paths.get("input.txt"));
@@ -20,7 +36,15 @@ public class Dec01 {
                     allLinesInt.add(Integer.valueOf(i));
                 }
             }
+            return allLinesInt;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+            return null;
+    }
 
+    private List<Integer> createReducedList() {
+            List<Integer> allLinesInt = readFile();
             // get the index of 0s
             int[] indexes = Stream.of(
                     IntStream.of(-1),
@@ -43,12 +67,6 @@ public class Dec01 {
                 }
                 calories.add(cal);
             }
-
-            // get max
-            return Collections.max(calories);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+            return calories;
     }
 }
