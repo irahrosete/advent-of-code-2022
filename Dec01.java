@@ -20,7 +20,7 @@ public class Dec01 {
     }
 
     private List<Integer> convertToInt() {
-        List<String> allLines = Utils.readFile("dec01-input.txt");
+        List<String> allLines = Utils.readFile("resources/dec01.txt");
         // convert from string to integer
         List<Integer> allLinesInt = new ArrayList<>();
         assert allLines != null;

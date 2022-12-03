@@ -37,7 +37,7 @@ public class Dec02 {
     }
 
     public Integer getTotalScore(Integer round) {
-        List<String> strategy = Utils.readFile("dec02-input.txt");
+        List<String> strategy = Utils.readFile("resources/dec02.txt");
         assert strategy != null;
         List<Integer> scores;
         if (round.equals(1)) {
@@ -47,8 +47,6 @@ public class Dec02 {
         }
         return scores.stream().reduce(0, Integer::sum);
     }
-
-
 }
 
 /*
