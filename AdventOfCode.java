@@ -6,5 +6,10 @@ public class AdventOfCode {
         System.out.println();
         System.out.printf("Dec01 2 %d", dec01.getTopThreeTotal());
         System.out.println();
+
+        Dec02 dec02 = new Dec02();
+        System.out.printf("Dec02 1 %d", dec02.getTotalScore());
+        System.out.println();
+        System.out.println(dec02.temp());
     }
 }
