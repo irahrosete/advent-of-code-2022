@@ -15,9 +15,10 @@ public class AdventOfCode {
         System.out.println();
 
         Dec03 dec03 = new Dec03();
-        System.out.printf("Dec03 1 %d", dec03.sumPriorities());
+        System.out.printf("Dec03 1 %d", dec03.sumPriorities(1));
         System.out.println();
-//        System.out.printf("");
+        System.out.printf("Dec03 2 %d", dec03.sumPriorities(2));
         System.out.println();
+
     }
 }

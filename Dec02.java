@@ -2,6 +2,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Dec02 {
+    public Integer getTotalScore(Integer round) {
+        List<String> strategy = Utils.readFile("resources/dec02.txt");
+        assert strategy != null;
+        List<Integer> scores;
+        if (round.equals(1)) {
+            scores = getScoresRd1(strategy);
+        } else {
+            scores = getScoresRd2(strategy);
+        }
+        return scores.stream().reduce(0, Integer::sum);
+    }
+
     private List<Integer> getScoresRd1(List<String> strategy) {
         return strategy.stream().map(item -> {
             return switch (item) {
@@ -34,18 +46,6 @@ public class Dec02 {
                 default -> 0;
             };
         }).collect(Collectors.toList());
-    }
-
-    public Integer getTotalScore(Integer round) {
-        List<String> strategy = Utils.readFile("resources/dec02.txt");
-        assert strategy != null;
-        List<Integer> scores;
-        if (round.equals(1)) {
-            scores = getScoresRd1(strategy);
-        } else {
-            scores = getScoresRd2(strategy);
-        }
-        return scores.stream().reduce(0, Integer::sum);
     }
 }
 
