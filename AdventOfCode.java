@@ -8,8 +8,9 @@ public class AdventOfCode {
         System.out.println();
 
         Dec02 dec02 = new Dec02();
-        System.out.printf("Dec02 1 %d", dec02.getTotalScore());
+        System.out.printf("Dec02 1 %d", dec02.getTotalScore(1));
         System.out.println();
-        System.out.println(dec02.temp());
+        System.out.printf("Dec02 2 %d", dec02.getTotalScore(2));
+        System.out.println();
     }
 }
