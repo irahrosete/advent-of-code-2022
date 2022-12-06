@@ -1,3 +1,7 @@
+package src.main.java.dec;
+
+import src.main.java.utils.Utils;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -5,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class Dec03 {
     public Integer sumPriorities(Integer num) {
-        List<String> rucksack = Utils.readFile("resources/dec03.txt");
+        List<String> rucksack = Utils.readFile("src/main/resources/dec03.txt");
 
         List<String> priorities;
         assert rucksack != null;

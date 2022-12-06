@@ -1,3 +1,10 @@
+package src.main.java;
+
+import src.main.java.dec.Dec01;
+import src.main.java.dec.Dec02;
+import src.main.java.dec.Dec03;
+import src.main.java.dec.Dec04;
+
 public class AdventOfCode {
     public static void main(String[] args) {
         System.out.println("Advent of Code 2022");

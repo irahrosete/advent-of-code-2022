@@ -1,9 +1,13 @@
+package src.main.java.dec;
+
+import src.main.java.utils.Utils;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Dec02 {
     public Integer getTotalScore(Integer round) {
-        List<String> strategy = Utils.readFile("resources/dec02.txt");
+        List<String> strategy = Utils.readFile("src/main/resources/dec02.txt");
         assert strategy != null;
         List<Integer> scores;
         if (round.equals(1)) {

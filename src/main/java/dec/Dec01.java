@@ -1,3 +1,7 @@
+package src.main.java.dec;
+
+import src.main.java.utils.Utils;
+
 import java.util.*;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -20,7 +24,7 @@ public class Dec01 {
     }
 
     private List<Integer> convertToInt() {
-        List<String> allLines = Utils.readFile("resources/dec01.txt");
+        List<String> allLines = Utils.readFile("src/main/resources/dec01.txt");
         // convert from string to integer
         List<Integer> allLinesInt = new ArrayList<>();
         assert allLines != null;

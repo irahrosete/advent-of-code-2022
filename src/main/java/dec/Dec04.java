@@ -1,3 +1,7 @@
+package src.main.java.dec;
+
+import src.main.java.utils.Utils;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -5,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class Dec04 {
     public Integer containTotal(Integer num) {
-        List<String> assignments = Utils.readFile("resources/dec04.txt");
+        List<String> assignments = Utils.readFile("src/main/resources/dec04.txt");
         assert assignments != null;
         List<List<String>> cleansed = cleanInput(assignments);
         List<List<Integer>> cleansedInt = convertToNum(cleansed);
