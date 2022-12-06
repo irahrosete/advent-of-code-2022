@@ -1,6 +1,3 @@
-import java.util.Collections;
-import java.util.List;
-
 public class AdventOfCode {
     public static void main(String[] args) {
         System.out.println("Advent of Code 2022");
@@ -24,18 +21,9 @@ public class AdventOfCode {
         System.out.println();
 
         Dec04 dec04 = new Dec04();
-        System.out.printf("Dec04 1 %d", dec04.fullyContainTotal());
+        System.out.printf("Dec04 1 %d", dec04.containTotal(1));
         System.out.println();
-//        System.out.printf("Dec04 2 %d", dec04.fullyContainTotal());
+        System.out.printf("Dec04 2 %d", dec04.containTotal(2));
         System.out.println();
-
-//        List<Integer> item1 = List.of(3, 94, 4, 59);
-//        List<Integer> item2 = List.of(50, 90, 43, 90);
-//        List<List<Integer>> items = List.of(item1, item2);
-//        System.out.println(items);
-//        List<Boolean> listBool = dec04.compare(items);
-//        System.out.println(listBool);
-//        System.out.println(Collections.frequency(listBool, true));
-//        System.out.println(Collections.frequency(listBool, false));
     }
 }

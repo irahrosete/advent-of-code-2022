@@ -4,16 +4,31 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Dec04 {
-    public  Integer fullyContainTotal() {
+    public Integer containTotal(Integer num) {
         List<String> assignments = Utils.readFile("resources/dec04.txt");
         assert assignments != null;
         List<List<String>> cleansed = cleanInput(assignments);
         List<List<Integer>> cleansedInt = convertToNum(cleansed);
-        List<Boolean> boolList = compare(cleansedInt);
-        return Collections.frequency(boolList, true);
+        int answer = 0;
+        List<Boolean> boolList;
+        if (num.equals(1)) {
+            boolList = compare(cleansedInt);
+        } else {
+            boolList = compareAgain(cleansedInt);
+        }
+        answer = Collections.frequency(boolList, true);
+        return answer;
     }
 
-    public List<Boolean> compare(List<List<Integer>> input) {
+    private List<Boolean> compareAgain(List<List<Integer>> input) {
+        return input.stream().map(item -> {
+            if ((item.get(0) >= item.get(2)) && (item.get(0) <= item.get(3))) {
+                return true;
+            } else return (item.get(2) >= item.get(0)) && (item.get(2) <= item.get(1));
+        }).collect(Collectors.toList());
+    }
+
+    private List<Boolean> compare(List<List<Integer>> input) {
         return input.stream().map(item -> {
             if ((item.get(0) >= item.get(2)) && (item.get(1) <= item.get(3))) {
                 return true;
