@@ -1,9 +1,6 @@
 package src.main.java;
 
-import src.main.java.dec.Dec01;
-import src.main.java.dec.Dec02;
-import src.main.java.dec.Dec03;
-import src.main.java.dec.Dec04;
+import src.main.java.dec.*;
 
 public class AdventOfCode {
     public static void main(String[] args) {
@@ -31,6 +28,12 @@ public class AdventOfCode {
         System.out.printf("Dec04 1 %d", dec04.containTotal(1));
         System.out.println();
         System.out.printf("Dec04 2 %d", dec04.containTotal(2));
+        System.out.println();
+
+        Dec05 dec05 = new Dec05();
+        System.out.printf("Dec05 1 %s", dec05.findTopCrates(1));
+        System.out.println();
+        System.out.printf("Dec05 2 %s", dec05.findTopCrates(2));
         System.out.println();
     }
 }

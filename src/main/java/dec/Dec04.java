@@ -7,6 +7,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static src.main.java.utils.Utils.convertToNum;
+
 public class Dec04 {
     public Integer containTotal(Integer num) {
         List<String> assignments = Utils.readFile("src/main/resources/dec04.txt");
@@ -40,12 +42,6 @@ public class Dec04 {
         }).collect(Collectors.toList());
     }
 
-    private List<List<Integer>> convertToNum(List<List<String>> input) {
-        return input.stream().map(pair -> {
-            return pair.stream().map(Integer::valueOf).collect(Collectors.toList());
-        }).collect(Collectors.toList());
-    }
-
     private List<List<String>> cleanInput(List<String> input) {
         List<List<String>> items = new ArrayList<>();
         for (String item: input) {
@@ -55,9 +51,3 @@ public class Dec04 {
         return items;
     }
 }
-
-//split on ,
-//split on -
-//convert to num
-//compare 1st
-//compare 2nd
